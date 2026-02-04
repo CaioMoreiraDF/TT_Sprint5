@@ -1,5 +1,5 @@
-import streamlit as st
 import pandas as pd
+import streamlit as st
 import plotly.express as px
 
 # abrir arquivo de dados em um DataFrame
@@ -8,10 +8,11 @@ df_vehicles = pd.read_csv(r"C:\Users\ADM\TripleTen\TT_Sprint5\vehicles.csv")
 # cabeçalho do app
 st.header('Anúncios de Carros')
 
-# Botão de criação do histograma
-hist_button = st.button('Criar histograma')
+# criação de opções para caixa de seleção
+build_histogram = st.checkbox('Criar Histograma')
+build_graph = st.checkbox('Criar Gráfico de Dispersão')
 
-if hist_button: # se o botão for clicado
+if build_histogram: # se o histograma for escolhido
     # escreva a mensagem
     st.write('Criando um histograma dos anúncios de carros')
 
@@ -21,10 +22,7 @@ if hist_button: # se o botão for clicado
     # Exibir gráfico plotly interativo
     st.plotly_chart(fig, width='stretch')
 
-# botao de criação do gráfico de dispersão
-chart_button = st.button('Criar Gráfico de Dispersão')
-
-if chart_button: # se o botão for clicado
+if build_graph: # se o gráfico for escolhido
     # escrever mensagem
     st.write('Criando Gráfico de Dispersão')
 
