@@ -19,5 +19,15 @@ if hist_button: # se o botão for clicado
     fig = px.histogram(df_vehicles, x="odometer")
 
     # Exibir gráfico plotly interativo
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
+# botao de criação do gráfico de dispersão
+chart_button = st.button('Criar Gráfico de Dispersão')
+
+if chart_button: # se o botão for clicado
+    # escrever mensagem
+    st.write('Criando Gráfico de Dispersão')
+
+    # criar gráfico
+    fig2 = px.scatter(df_vehicles, x='odometer', y='price')
+    st.plotly_chart(fig2)
