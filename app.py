@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 
 # abrir arquivo de dados em um DataFrame
-df_vehicles = pd.read_csv(r"C:\Users\ADM\TripleTen\TT_Sprint5\vehicles.csv")
+df_vehicles = pd.read_csv("C:\\Users\\ADM\\TripleTen\\TT_Sprint5\\vehicles_us.csv")
 
 # cabeçalho do app
 st.header('Comparativo de Preço de Veículos Anunciados')
